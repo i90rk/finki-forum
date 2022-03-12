@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+
+  webapp:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:80
+    # hostname: finki-forum.local
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - mongo
+    environment:
+      BASE_URL: 'http://192.168.31.217:8080/'
+    # networks:
+      # - development_network
+  
+  mongo:
+    image: mongo:3.6
+    container_name: finki-forum-mongo-db
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data/db
+    # environment:
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: root
+    # networks:
+      # - development_network
+
+# networks:
+  # development_network:
