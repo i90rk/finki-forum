@@ -32,7 +32,7 @@ services:
       - ${MONGO_PORT}:27017
     volumes:
       # init finki_forum db data - create admin user and a forum with subforums
-      - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+      - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
       - finki-forum-mongo-data:/data/db
     environment:
       - MONGO_INITDB_DATABASE=${MONGO_DBNAME}
