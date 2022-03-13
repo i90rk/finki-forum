@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - ${PORT:80
+      - ${PORT}:80
     volumes:
       - ./:/var/www/html
       - finki-forum-data/uploads/images:/var/www/html/resources/uploads/images
