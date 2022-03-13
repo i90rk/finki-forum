@@ -9,10 +9,10 @@ services:
       - ${PORT}:80
     volumes:
       - ./:/var/www/html
-      - finki-forum-data/uploads/images:/var/www/html/resources/uploads/images
-      - finki-forum-data/uploads/user_avatars:/var/www/html/resources/uploads/user_avatars
-      - finki-forum-data/uploads/videos:/var/www/html/resources/uploads/videos
-      - finki-forum-data/uploads/videos_thumbnails:/var/www/html/resources/uploads/videos_thumbnails
+      - finki-forum-images:/var/www/html/resources/uploads/images
+      - finki-forum-user-avatars:/var/www/html/resources/uploads/user_avatars
+      - finki-forum-videos:/var/www/html/resources/uploads/videos
+      - finki-forum-videos-thumbnails:/var/www/html/resources/uploads/videos_thumbnails
     depends_on:
       - mongo
     environment:
@@ -33,7 +33,7 @@ services:
     volumes:
       # init finki_forum db data - create admin user and a forum with subforums
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
-      - finki-forum-data/mongo:/data/db
+      - finki-forum-mongo-data:/data/db
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
@@ -44,4 +44,8 @@ networks:
   finki-forum-network:
 
 volumes:
-  finki-forum-data:
+  finki-forum-mongo-data:
+  finki-forum-images:
+  finki-forum-user-avatars:
+  finki-forum-videos:
+  finki-forum-videos-thumbnails:
