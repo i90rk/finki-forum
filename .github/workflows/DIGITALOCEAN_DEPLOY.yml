@@ -26,12 +26,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Create .env
         run: |
-          echo 'BASE_URL=${{ secrets.BASE_URL }}' > .env
-          echo 'PORT=${{ secrets.PORT }}' > .env
-          echo 'MONGO_DBNAME=${{ secrets.MONGO_DBNAME }}' > .env
-          echo 'MONGO_PORT=${{ secrets.MONGO_PORT }}' > .env
-          echo 'MONGO_INITDB_ROOT_USERNAME=${{ secrets.MONGO_INITDB_ROOT_USERNAME }}' > .env
-          echo 'MONGO_INITDB_ROOT_PASSWORD=${{ secrets.MONGO_INITDB_ROOT_PASSWORD }}' > .env
+          echo 'BASE_URL=${{ secrets.BASE_URL }}' >> .env
+          echo 'PORT=${{ secrets.PORT }}' >> .env
+          echo 'MONGO_DBNAME=${{ secrets.MONGO_DBNAME }}' >> .env
+          echo 'MONGO_PORT=${{ secrets.MONGO_PORT }}' >> .env
+          echo 'MONGO_INITDB_ROOT_USERNAME=${{ secrets.MONGO_INITDB_ROOT_USERNAME }}' >> .env
+          echo 'MONGO_INITDB_ROOT_PASSWORD=${{ secrets.MONGO_INITDB_ROOT_PASSWORD }}' >> .env
 
       # Runs a set of commands using the runners shell
       - name: Run build
