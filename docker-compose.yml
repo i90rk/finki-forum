@@ -35,7 +35,7 @@ services:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
       - finki-forum-mongo-data:/data/db
     environment:
-      - MONGO_INITDB_DATABSE=${MONGO_DBNAME}
+      - MONGO_INITDB_DATABASE=${MONGO_DBNAME}
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     networks:
