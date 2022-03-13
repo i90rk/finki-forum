@@ -14,9 +14,8 @@
 | path to your installation.
 |
 */
-// $config['base_url']	= 'http://finki-forum.local/';
 // $config['base_url']	= 'http://192.168.1.37:8080/';
-$config['base_url']	= getenv('BASE_URL');
+$config['base_url']	= getenv('BASE_URL') . ':' . getenv('PORT') . '/';
 
 /*
 |--------------------------------------------------------------------------
