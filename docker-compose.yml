@@ -5,8 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    ports:
-      - 80:80
     volumes:
       - ./:/var/www/html
       - finki-forum-images:/var/www/html/resources/uploads/images
