@@ -19,8 +19,8 @@ class Mongo_db extends Mongo {
 
         // Initialise Mongo - Authentication required
         try{
-            // parent::__construct("mongodb://$username:$password@$server/$dbname");
-            parent::__construct($server);
+            // parent::__construct($server);
+            parent::__construct("mongodb://$username:$password@$server/$dbname");
             $this->db = $this->$dbname;
         }catch(MongoConnectionException $e){
             //Don't show Mongo Exceptions as they can contain authentication info
