@@ -50,6 +50,8 @@ services:
       - webapp
     ports:
       - 80:80
+    networks:
+      - finki-forum-network
 
 
 networks:
