@@ -15,7 +15,7 @@
 |
 */
 // $config['base_url']	= 'http://192.168.1.37:8080/';
-$config['base_url']	= getenv('BASE_URL') . ':' . getenv('PORT') . '/';
+$config['base_url']	= getenv('BASE_URL') . '/';
 
 /*
 |--------------------------------------------------------------------------
