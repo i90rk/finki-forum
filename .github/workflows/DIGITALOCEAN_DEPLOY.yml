@@ -36,5 +36,9 @@ jobs:
           echo 'MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}' >> .env
 
       # Runs a set of commands using the runners shell
+      - name: Change permissions for uploads folders
+        run: chmod -R 775 resources/uploads
+
+      # Runs a set of commands using the runners shell
       - name: Run build
         run: docker-compose up --scale webapp=3 -d
