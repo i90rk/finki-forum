@@ -37,7 +37,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Change permissions for uploads folders
-        run: chmod -R 775 resources/uploads
+        run: chmod -R 775 resources
 
       # Runs a set of commands using the runners shell
       - name: Run build
