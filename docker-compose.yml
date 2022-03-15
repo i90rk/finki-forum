@@ -13,6 +13,8 @@ services:
       - finki-forum-videos-thumbnails:/var/www/html/resources/uploads/videos_thumbnails
     depends_on:
       - mongo
+    expose:
+      - "5000"
     environment:
       - BASE_URL=${BASE_URL}
       - PORT=${PORT}
