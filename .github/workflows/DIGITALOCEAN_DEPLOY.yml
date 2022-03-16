@@ -36,7 +36,7 @@ jobs:
           echo 'MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}' >> .env
 
       # Runs a set of commands using the runners shell
-      - name: Change permissions for uploads folders
+      #- name: Change permissions for uploads folders
         # run: chmod -R 777 resources
 
       # Runs a set of commands using the runners shell
