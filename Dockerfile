@@ -8,7 +8,7 @@ RUN apt-get update && \
     docker-php-ext-enable mongo
 
 # COPY . finki_forum
-RUN chown -R www-data:www-data /var/www
+# RUN chown -R www-data:www-data /var/www
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite && service apache2 restart
