@@ -7,10 +7,10 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - ./:/var/www/html
-      - finki-forum-images:/var/www/html/resources/uploads/images
-      - finki-forum-user-avatars:/var/www/html/resources/uploads/user_avatars
-      - finki-forum-videos:/var/www/html/resources/uploads/videos
-      - finki-forum-videos-thumbnails:/var/www/html/resources/uploads/videos_thumbnails
+      #- finki-forum-images:/var/www/html/resources/uploads/images
+      #- finki-forum-user-avatars:/var/www/html/resources/uploads/user_avatars
+      #- finki-forum-videos:/var/www/html/resources/uploads/videos
+      #- finki-forum-videos-thumbnails:/var/www/html/resources/uploads/videos_thumbnails
     depends_on:
       - mongo
     environment:
@@ -59,7 +59,7 @@ networks:
 
 volumes:
   finki-forum-mongo-data:
-  finki-forum-images:
-  finki-forum-user-avatars:
-  finki-forum-videos:
-  finki-forum-videos-thumbnails:
+  #finki-forum-images:
+  #finki-forum-user-avatars:
+  #finki-forum-videos:
+  #finki-forum-videos-thumbnails:
