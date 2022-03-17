@@ -23,7 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@main
 
-      # Runs a single command using the runners shell
+      # Add environment variables
       - name: Create .env
         run: |
           echo 'BASE_URL=${{ secrets.BASE_URL }}' >> .env
@@ -35,10 +35,10 @@ jobs:
           echo 'MONGO_USERNAME=${{ secrets.MONGO_USERNAME }}' >> .env
           echo 'MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}' >> .env
 
-      # Runs a set of commands using the runners shell
-      #- name: Change permissions for uploads folders
-        # run: chmod -R 777 resources
+      # Change permissions for uploads folder
+      - name: Change permissions for uploads folders
+        run: chmod -R 777 resources/uploads
 
-      # Runs a set of commands using the runners shell
+      # Build and start the application
       - name: Run build
         run: docker-compose up --scale webapp=3 -d
