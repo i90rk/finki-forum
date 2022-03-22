@@ -36,8 +36,8 @@ jobs:
           echo 'MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}' >> .env
 
       # Change permissions for uploads folder
-      #- name: Change permissions for uploads folders
-        #run: chmod -R 777 resources/uploads
+      - name: Change permissions for uploads folders
+        run: chmod -R 777 resources/uploads
 
       # Build and start the application
       - name: Run build
